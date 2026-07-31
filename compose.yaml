@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  agdbot_container:
+    build: .
+    container_name: agdbot_container
+    restart: always
+    environment:
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - .env
+    volumes:
+      - ./config.yaml:/app/config.yaml:Z
+    
